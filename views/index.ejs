@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/weather-app-logo.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1 class="main-heading">Weather App</h1>
+    <div class="container">
+      <form action="/" method="post">
+        <input
+          class="city_name_input"
+          name="city_name"
+          type="text"
+          placeholder="City name"
+        />
+        <button class="submit_button" type="submit">Go</button>
+      </form>
+      <% if (locals.data) { %>
+      <h2 class="city_name_heading"><%= data.name %></h2>
+      <h3 class="city_temp">
+        Temperature: <span class="temp"><%= data.main.temp %>°C</span>
+      </h3>
+      <h3 class="city_temp city_humidity">
+        Humidity: <span class="temp"><%= data.main.humidity %>%</span>
+      </h3>
+      <h3 class="city_temp city_humidity">
+        Wind speed: <span class="temp"><%= data.wind.speed %>m/s</span>
+      </h3>
+      <% } else if(locals.error){%>
+      <h2 class="error_message">Please enter a valid city name</h2>
+      <%= error %> <% } %>
+    </div>
+
+    <footer>
+      <h4>© Copyright: 2024-2034 Dheeraj, inc.</h4>
+    </footer>
+  </body>
+</html>

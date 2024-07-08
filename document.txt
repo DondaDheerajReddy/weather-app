@@ -1,0 +1,2 @@
+my key = 52f5ddf8d738e3b5759e03fba809761b;
+URL = https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=52f5ddf8d738e3b5759e03fba809761b;
